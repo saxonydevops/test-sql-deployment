@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: saxonydevopstestsqldeployment 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: saxonydevopstestsqldeployment
+  template:
+    metadata:
+      labels:
+        app: saxonydevopstestsqldeployment 
+    spec:
+      containers:
+        - name: saxonydevopstestsqldeployment 
+          image: saxonydevops.azurecr.io/saxonydevopstestsqldeployment
+          ports:
+          - containerPort: 1433
